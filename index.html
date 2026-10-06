@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ocarina of Time · Cuenta regresiva</title>
+  <meta name="description" content="La cuenta regresiva para el regreso a Hyrule.">
+  <meta name="theme-color" content="#0b1a14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <main class="stage">
+    <p class="eyebrow">The Legend of Zelda</p>
+    <h1 class="title">Ocarina <span>of</span> Time</h1>
+
+    <svg class="triforce" viewBox="0 0 100 90" aria-hidden="true">
+      <defs>
+        <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff3b0"/>
+          <stop offset="0.55" stop-color="#f2c744"/>
+          <stop offset="1" stop-color="#b8861b"/>
+        </linearGradient>
+      </defs>
+      <polygon points="50,2 74,44 26,44" fill="url(#gold)"/>
+      <polygon points="26,46 50,88 2,88"  fill="url(#gold)"/>
+      <polygon points="74,46 98,88 50,88" fill="url(#gold)"/>
+    </svg>
+
+    <p class="for" id="forLine"></p>
+    <p class="lead" id="lead">El regreso a Hyrule comienza en…</p>
+
+    <section class="clock" id="clock" aria-live="polite">
+      <div class="cell"><span class="num" id="d">00</span><span class="lbl">Días</span></div>
+      <div class="cell"><span class="num" id="h">00</span><span class="lbl">Horas</span></div>
+      <div class="cell"><span class="num" id="m">00</span><span class="lbl">Minutos</span></div>
+      <div class="cell"><span class="num" id="s">00</span><span class="lbl">Segundos</span></div>
+    </section>
+
+    <div class="path" aria-hidden="true">
+      <div class="path-bar"><div class="path-fill" id="pathFill"></div></div>
+      <div class="path-labels"><span>Hoy</span><span>5 · Nov · 2026</span></div>
+    </div>
+
+    <div class="hearts" id="hearts" aria-hidden="true"></div>
+
+    <p class="quote" id="quote"></p>
+
+    <div class="controls">
+      <button id="musicBtn" class="btn" type="button" aria-pressed="false">
+        <span class="ico">♪</span><span id="musicLbl">Tocar música</span>
+      </button>
+      <label class="vol" title="Volumen">
+        <span class="sr">Volumen</span>
+        <input id="vol" type="range" min="0" max="100" value="55">
+      </label>
+      <button id="dayBtn" class="btn" type="button">
+        <span class="ico" id="dayIco">☀</span><span id="dayLbl">Canción del Sol</span>
+      </button>
+    </div>
+  </main>
+
+  <button id="navi" class="navi" type="button" aria-label="Navi">
+    <span class="navi-orb"></span>
+    <span class="navi-bubble" id="naviBubble">¡Hey! ¡Listen!</span>
+  </button>
+
+  <footer class="foot"></footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
